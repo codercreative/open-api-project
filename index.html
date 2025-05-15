@@ -3,10 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Unica+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome Content Delivery Network CDNJS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+
+    <!-- CSS Style Sheet -->
     <link rel="stylesheet" href="style.css" />
-    <title>Weather API</title>
+    <title>Weather App | Open Api Project</title>
   </head>
   <body>
+    <main>
+      <header>
+        <h1>What's the weather today?</h1>
+        <h2>Choose your location</h2>
+      </header>
+      <!-- Using form for accessibility and best practices -->
+      <form class="search-container">
+        <input
+          id="city-input"
+          type="text"
+          aria-label="Enter city name"
+          placeholder="Enter city name"
+          required
+        />
+        <button id="submit-btn" type="submit" aria-label="Search">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <!-- Error message in case the user does not input a valid city name -->
+
+      <p class="error-msg hidden">Please enter a valid city name</p>
+
+      <div class="weather-container">
+        <div class="weather-icon">
+          <!-- Font awesome icon to be replaced by my own illustrations based on weather code in JS -->
+          <i id="weather-code-illustration" class="fa-solid fa-sun"></i>
+        </div>
+        <h2 id="temperature"></h2>
+        <h2 id="city" class="city"></h2>
+        <h3 id="country"></h3>
+      </div>
+
+      <section class="img-container"></section>
+    </main>
     <script src="script.js"></script>
   </body>
 </html>
