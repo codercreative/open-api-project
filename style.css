@@ -1,3 +1,107 @@
+/* ------
+GENERAL STYLES 
+------*/
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Unica One", sans-serif;
+}
+
 body {
-  background-color: goldenrod;
+  background: linear-gradient(145deg, #fff085, #feba17);
+}
+
+main {
+  margin: 0 auto;
+  max-width: 450px;
+  height: 100vh;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 6em;
+}
+
+header {
+  margin-bottom: 0.5em;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5em;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+/* ------
+INPUT FORM FOR USER TO INPUT CITY NAME
+------*/
+
+.search-container {
+  display: flex;
+  gap: 8px;
+  margin: 1.5em 0;
+}
+
+.search-container input {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 24px;
+  padding: 5px 10px;
+  border: none;
+  width: 100%;
+}
+
+.search-container button {
+  border: none;
+  background-color: transparent;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* ------
+SECTION FOR DISPLAYING THE CITY'S WEATHER CODE (IN AN ILLUSTRATION), TEMPERATURE AND CITY NAME
+------*/
+
+.weather-container {
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.weather-container .fa-sun {
+  font-size: 2rem;
+}
+
+/* ------
+ERROR MESSAGE IF USER DOES NOT ENTER A VALID CITY NAME
+------*/
+
+.error-msg {
+  font-family: "Roboto", sans-serif;
+  color: #ff0000;
+}
+
+.hidden {
+  display: none;
 }
