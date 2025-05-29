@@ -88,7 +88,7 @@ async function fetchGeoLocationFromUserZipCodeInput(zipcode) {
     );
     const data = await response.json();
     savedGeoLocationDetails = data;
-    console.log(savedGeoLocationDetails);
+
     if (
       !savedGeoLocationDetails.results ||
       savedGeoLocationDetails.results.length === 0 ||
@@ -126,7 +126,6 @@ async function fetchTempCityStateWeatherIllustration(latitude, longitude) {
 
     const data = await response.json();
     savedWeatherDetails = data;
-    console.log(savedWeatherDetails);
     savedLatitude = data.latitude;
     savedLongitude = data.longitude;
 
@@ -165,13 +164,11 @@ async function fetchMoreWeatherInfo() {
 
     const data = await response.json();
     const savedMoreInfoWeatherDetails = data;
-    console.log(savedMoreInfoWeatherDetails);
     const daily = savedMoreInfoWeatherDetails.daily;
     const tempFeelsLike = daily.apparent_temperature_mean[0];
     const windSpeed = daily.wind_speed_10m_max[0];
     const windDirection = daily.wind_direction_10m_dominant[0];
     const uv = daily.uv_index_max[0];
-    console.log(tempFeelsLike, windSpeed, windDirection, uv);
 
     //Temperature feels like text
     tempFeelsLikeEl.textContent = `Feels like: ${tempFeelsLike} °F`;
@@ -285,7 +282,6 @@ function getWindDirection(windDegree) {
 
 //Helper function for UV exposure
 function getUVExposureDescription(uvIndex) {
-  console.log("UV index received", uvIndex);
   if (uvIndex < 3) return "Low";
   if (uvIndex < 6) return "Moderate";
   if (uvIndex < 8) return "High";
