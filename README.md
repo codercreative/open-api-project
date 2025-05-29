@@ -44,7 +44,7 @@ The user can then select the "angles-down" icon in order to display additional w
 
 ## App Checklist Examples
 
-### API Requirement
+### API Project Requirement
 
 - Added two search buttons
 
