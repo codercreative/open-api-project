@@ -3,11 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link rel="icon" href="../images/sun-favicon.png" type="image/png" />
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Unica+One&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Unica+One&display=swap"
       rel="stylesheet"
     />
 
@@ -18,45 +20,91 @@
     />
 
     <!-- CSS Style Sheet -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Weather App | Open Api Project</title>
   </head>
   <body>
     <main>
       <header>
-        <h1>What's the weather today?</h1>
-        <h2>Choose your location</h2>
+        <h1>US Weather Check</h1>
+        <h2>Enter zip code</h2>
       </header>
       <!-- Using form for accessibility and best practices -->
       <form class="search-container">
         <input
-          id="city-input"
+          id="zip-code-input"
           type="text"
-          aria-label="Enter city name"
-          placeholder="Enter city name"
+          aria-label="Enter zip code"
+          placeholder="e.g., 10001"
           required
         />
-        <button id="submit-btn" type="submit" aria-label="Search">
-          <i class="fa-solid fa-magnifying-glass"></i>
+        <button
+          class="temp-btn"
+          id="submit-btn"
+          type="submit"
+          aria-label="Search"
+        >
+          <i class="fa-solid fa-temperature-three-quarters"></i>
         </button>
       </form>
 
       <!-- Error message in case the user does not input a valid city name -->
 
-      <p class="error-msg hidden">Please enter a valid city name</p>
+      <p id="error-msg" class="error-msg hidden">
+        Oops! <br />
+        Please enter a valid zip code
+      </p>
 
-      <div class="weather-container">
-        <div class="weather-icon">
-          <!-- Font awesome icon to be replaced by my own illustrations based on weather code in JS -->
-          <i id="weather-code-illustration" class="fa-solid fa-sun"></i>
+      <section class="city-temp-img-section">
+        <div class="weather-data-wrapper">
+          <h2 id="temperature">Fahrenheit</h2>
+          <h2 id="city">City</h2>
+          <h3 id="usa-state">State</h3>
         </div>
-        <h2 id="temperature"></h2>
-        <h2 id="city" class="city"></h2>
-        <h3 id="country"></h3>
-      </div>
 
-      <section class="img-container"></section>
+        <div class="weather-icon-wrapper">
+          <img
+            id="weather-icon"
+            class="weather-icon"
+            src="images/sun.webp"
+            alt="weather-icon"
+          />
+        </div>
+
+        <p id="weather-code-description">Description</p>
+      </section>
+
+      <section class="more-info-section" id="more-info-section">
+        <button
+          class="more-info-btn"
+          id="more-info-btn"
+          aria-label="More information"
+        >
+          <i class="fa-solid fa-angles-down"></i>
+        </button>
+        <h3>More Information</h3>
+        <div class="more-info-wrapper">
+          <div class="icon-text-wrapper">
+            <i class="fa-solid fa-temperature-half"></i>
+            <p id="temp-feels-like">Apparent Temp</p>
+          </div>
+          <div class="icon-text-wrapper">
+            <i class="fa-solid fa-wind"></i>
+            <p id="wind-speed">Wind Speed</p>
+          </div>
+          <div class="icon-text-wrapper">
+            <i class="fa-solid fa-compass"></i>
+            <p id="wind-direction">Wind Direction</p>
+          </div>
+          <div class="icon-text-wrapper">
+            <i class="fa-solid fa-umbrella-beach"></i>
+            <p id="uv-max">UV Index</p>
+          </div>
+        </div>
+      </section>
     </main>
-    <script src="script.js"></script>
+    <footer id="footer" class="footer"></footer>
+
+    <script src="js/script.js"></script>
   </body>
 </html>
