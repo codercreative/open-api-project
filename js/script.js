@@ -46,7 +46,7 @@ zipCodeInput.addEventListener("focus", () => {
   temperatureEl.textContent = "Fahrenheit";
   cityEl.textContent = "City";
   usaStateEl.textContent = "State";
-  weatherIconEl.src = "../images/sun.webp";
+  weatherIconEl.src = "images/sun.webp";
   weatherCodeDescriptionEl.textContent = "Description";
   tempFeelsLikeEl.textContent = "Apparent Temp";
   windSpeedEl.textContent = "Wind Speed";
@@ -201,19 +201,17 @@ async function fetchMoreWeatherInfo() {
 //Get the images' path depending on the weather code from open meteo
 function getWeatherCodeIllustrationPath(weathercode) {
   if ([0, 1].includes(weathercode))
-    return isDay ? "../images/sun.webp" : "../images/clear-night.webp";
+    return isDay ? "images/sun.webp" : "images/clear-night.webp";
   if (weathercode === 2)
-    return isDay
-      ? "../images/partly-cloudy.webp"
-      : "../images/cloudy-night.webp";
-  if (weathercode === 3) return "../images/overcast.webp";
-  if ([45, 48].includes(weathercode)) return "../images/fog.webp";
+    return isDay ? "images/partly-cloudy.webp" : "images/cloudy-night.webp";
+  if (weathercode === 3) return "images/overcast.webp";
+  if ([45, 48].includes(weathercode)) return "images/fog.webp";
   if (
     [51, 53, 55, 56, 57, 61, 63, 65, 66, 67, 80, 81, 82].includes(weathercode)
   )
     return "images/rain.webp";
-  if ([77, 85, 86].includes(weathercode)) return "../images/snow.webp";
-  if ([95, 96, 99].includes(weathercode)) return "../images/lightning.webp";
+  if ([77, 85, 86].includes(weathercode)) return "images/snow.webp";
+  if ([95, 96, 99].includes(weathercode)) return "images/lightning.webp";
 }
 
 //Description for the weather code from open meteo
