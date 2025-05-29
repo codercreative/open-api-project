@@ -43,7 +43,7 @@ zipCodeInput.addEventListener("focus", () => {
   zipCodeInput.value = "";
   zipCodeInput.placeholder = "";
   errorMsg.classList.add("hidden");
-  temperatureEl.textContent = "Fahrenheit";
+  temperatureEl.textContent = "Temp now";
   cityEl.textContent = "City";
   usaStateEl.textContent = "State";
   weatherIconEl.src = "images/sun.webp";
