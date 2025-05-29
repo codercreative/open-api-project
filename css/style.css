@@ -1,0 +1,297 @@
+/* ------
+GENERAL STYLES 
+------*/
+:root {
+  --orange: #feba17;
+  --warm-grey: #435069;
+  --white: #fff;
+  --red: #ff0000;
+  --almost-black: #333;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: "Unica One", sans-serif;
+}
+
+body {
+  /* Instead of #000 I use #333 for better readability */
+  color: var(--almost-black);
+}
+
+main {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 4em;
+}
+
+h1,
+h2,
+h3,
+p {
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-family: "Lexend", sans-serif;
+  font-size: 1rem;
+}
+
+/* ------
+HEADER SECTION
+------*/
+header {
+  margin-bottom: 0.5em;
+}
+
+/* ------
+FORM INPUT FORM FOR USER TO INPUT CITY NAME
+------*/
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-container input {
+  text-align: center;
+  font-family: "Lexend", sans-serif;
+  font-size: 1.2rem;
+  border-radius: 24px;
+  padding: 5px 10px;
+  border: 3px solid var(--orange);
+  width: 55%;
+  margin: 1.5em 0;
+}
+
+.search-container input::placeholder {
+  color: var(--warm-grey);
+  opacity: 0.6;
+  margin: 0 auto;
+}
+
+.temp-btn,
+.more-info-btn {
+  border: 2px solid var(--warm-grey);
+  background-color: var(--warm-grey);
+  padding: 5px 10px;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--white);
+  transition: all 0.3 ease-in-out;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.more-info-btn {
+  margin: 0.2em 0 1.4em;
+  font-size: 1.3rem;
+}
+
+.temp-btn:hover,
+.more-info-btn:hover {
+  border: 2px solid var(--orange);
+  background-color: var(--orange);
+}
+
+/* ------
+SECTION FOR DISPLAYING THE CITY'S TEMPERATURE, CITY, STATE, WEATHER CODE ILLUSTRATION, AND WEATHER CODE DESCRIPTION 
+------*/
+
+.city-temp-img-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.8em;
+}
+
+.weather-data-wrapper {
+  text-align: center;
+  flex: 1;
+  margin-bottom: 0.1em;
+}
+
+.weather-data-wrapper h2 {
+  margin-bottom: 0.5em;
+}
+
+.weather-icon-wrapper {
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.weather-icon {
+  width: 40%;
+}
+
+.city-temp-img-section p {
+  margin-bottom: 1.8em;
+  font-size: 1.2rem;
+}
+
+/* ------
+MORE INFO SECTION
+------*/
+
+.more-info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.more-info-section h3 {
+  margin-bottom: 0.3em;
+}
+
+.more-info-wrapper {
+  width: 70%;
+  margin-top: 1.5em;
+}
+
+.icon-text-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 0.8em;
+  margin-bottom: 1.8em;
+}
+
+.info-text-wrapper p {
+  font-size: 0.9rem;
+}
+
+.more-info-section .fa-solid {
+  font-size: 1.2rem;
+}
+
+/* ------
+FOOTER SECTION
+------*/
+.footer {
+  margin: 2em 0;
+}
+
+.footer p {
+  font-size: 0.8rem;
+}
+
+/* ------
+ERROR MESSAGE IF USER DOES NOT ENTER A VALID CITY NAME
+------*/
+
+.error-msg {
+  color: var(--red);
+  max-width: 230px;
+  margin-top: 1em;
+  filter: contrast(1.1);
+}
+
+.hidden {
+  display: none;
+}
+
+/* ------
+MEDIA QUERIES
+------*/
+@media (min-width: 767px) {
+  .weather-icon {
+    max-width: 20%;
+  }
+
+  .icon-text-wrapper p {
+    font-size: 1.2rem;
+  }
+
+  .footer p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1023px) {
+  .weather-icon {
+    max-width: 15%;
+  }
+}
+
+@media (min-width: 2559px) {
+  main {
+    margin-top: 6em;
+  }
+
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  h2 {
+    font-size: 2.8rem;
+  }
+
+  h3 {
+    font-size: 2.5rem;
+  }
+
+  p,
+  .city-temp-img-section p,
+  .more-info-section p,
+  .more-info-section .fa-solid,
+  .icon-text-wrapper p {
+    font-size: 1.8rem;
+  }
+
+  .search-container input {
+    font-size: 2rem;
+    padding: 10px 20px;
+    border: 5px solid var(--orange);
+    width: 65%;
+    margin: 2em 0;
+  }
+
+  .temp-btn,
+  .more-info-btn {
+    font-size: 2.5em;
+    padding: 10px 20px;
+    width: 80px;
+    height: 80px;
+  }
+
+  /* .weather-icon {
+    max-width: 10%;
+  } */
+
+  .icon-text-wrapper {
+    align-items: center;
+    gap: 1.5em;
+  }
+
+  .footer p {
+    font-size: 1.4rem;
+  }
+}
