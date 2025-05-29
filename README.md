@@ -7,7 +7,8 @@
 
 ## Live site
 
-- Click on the link to the upper right of this page to access the live link (pending......)
+Check out the live demo of the project here:
+[Live Site](https://codercreative.github.io/open-api-project/)
 
 ## Overview
 
